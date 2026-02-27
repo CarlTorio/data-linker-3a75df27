@@ -108,7 +108,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}>
 
-          Experience the next level of nightlife at Auxiliary, Novaliches' premier bar and lounge. Known for its premium cocktails, electrifying DJ sets, and an atmosphere unlike any other — Auxiliary is a must-visit destination.
+          Experience the next level of nightlife at Auxiliary, Novaliches' premier bar and lounge. Known for its premium cocktails, electrifying DJ sets, and an atmosphere unlike any other Auxiliary is a must-visit destination.
         </motion.p>
 
         {/* Buttons */}
