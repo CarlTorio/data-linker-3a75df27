@@ -25,7 +25,7 @@ const SocialIcon = ({ href, label, path }: {href: string;label: string;path: str
   </a>;
 
 
-const HeroSection = () => {
+const HeroSection = ({ loaded }: { loaded: boolean }) => {
   const scrollToBooking = () => {
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -56,7 +56,7 @@ const HeroSection = () => {
         className="relative z-10 w-[300px] md:w-[320px] max-[768px]:w-[230px] object-contain mt-24 md:mt-28"
         style={{ filter: "drop-shadow(0 0 30px rgba(139,0,0,0.6))" }}
         initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={loaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
         transition={{ delay: 0.1, duration: 0.7 }} />
 
       {/* Content */}
@@ -67,7 +67,7 @@ const HeroSection = () => {
           className="mt-10 md:mt-14 font-body font-bold text-[20px] md:text-[24px] tracking-[1px] uppercase"
           style={{ color: "rgba(255,255,255,1)" }}
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={loaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ delay: 0.3, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}>
           NOVALICHES
         </motion.p>
@@ -77,7 +77,7 @@ const HeroSection = () => {
           className="mt-[10px] mx-auto"
           style={{ height: 2, background: "#CC0000" }}
           initial={{ opacity: 0, y: 30, width: 0 }}
-          animate={{ opacity: 1, y: 0, width: 20 }}
+          animate={loaded ? { opacity: 1, y: 0, width: 20 } : { opacity: 0, y: 30, width: 0 }}
           transition={{ delay: 0.5, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }} />
 
         {/* Breathing space */}
@@ -103,7 +103,7 @@ const HeroSection = () => {
           className="mt-6 md:mt-8 font-body font-normal text-[17px] max-[768px]:text-[15px] leading-[1.5] max-w-[480px] max-[768px]:max-w-[90%]"
           style={{ color: "#FFFFFF" }}
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={loaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ delay: 0.7, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}>
 
           Experience the next level of nightlife at Auxiliary, Novaliches' premier bar and lounge. Known for its premium cocktails, electrifying DJ sets, and an atmosphere unlike any other Auxiliary is a must-visit destination.
@@ -113,7 +113,7 @@ const HeroSection = () => {
         <motion.div
           className="mt-8 md:mt-10 flex flex-col items-center gap-2.5 w-full"
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={loaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ delay: 0.9, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}>
 
           <button
@@ -160,7 +160,7 @@ const HeroSection = () => {
         <motion.div
           className="mt-8 md:mt-10 flex items-center gap-3"
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={loaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ delay: 1.1, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}>
 
           <SocialIcon
