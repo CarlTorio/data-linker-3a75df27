@@ -186,15 +186,15 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-scroll-bounce">
-        <span
-          className="font-body font-semibold text-[8px] tracking-[3px]"
-          style={{ color: "rgba(255,255,255,0.5)" }}>
+      
 
-          SCROLL
-        </span>
-        <div className="mt-2 w-[1px] h-9" style={{ background: "#CC0000" }} />
-      </div>
+
+
+
+
+
+
+
     </section>);
 
 };
