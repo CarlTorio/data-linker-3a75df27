@@ -64,13 +64,12 @@ const HeroSection = () => {
 
         {/* Novaliches */}
         <motion.p
-          className="mt-8 font-body font-normal text-[11px] tracking-[5px] uppercase"
+          className="mt-12 font-body font-bold text-[16px] md:text-[18px] tracking-[6px] uppercase"
           style={{ color: "rgba(255,255,255,1)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}>
-
-          NOVALICHES
+          NOVALICHES PHILIPPINES
         </motion.p>
 
         {/* Red accent line */}
@@ -113,14 +112,14 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <motion.div
-          className="mt-8 flex flex-col items-center gap-3 w-full"
+          className="mt-6 flex flex-col items-center gap-2.5 w-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0 }}>
 
           <button
             onClick={scrollToBooking}
-            className="font-body font-bold text-[12px] tracking-[2.5px] uppercase rounded-full px-12 py-3 transition-all duration-200 max-[768px]:w-[80%] max-[768px]:max-w-[260px]"
+            className="font-body font-bold text-[10px] tracking-[2px] uppercase rounded-full px-10 py-2.5 transition-all duration-200 max-[768px]:w-[70%] max-[768px]:max-w-[220px]"
             style={{
               background: "#8B0000",
               color: "#FFFFFF",
@@ -134,12 +133,11 @@ const HeroSection = () => {
               e.currentTarget.style.background = "#8B0000";
               e.currentTarget.style.boxShadow = "none";
             }}>
-
             BOOK NOW
           </button>
           <button
             onClick={scrollToBooking}
-            className="font-body font-bold text-[12px] tracking-[2.5px] uppercase rounded-full px-12 py-3 transition-all duration-200 max-[768px]:w-[80%] max-[768px]:max-w-[260px]"
+            className="font-body font-bold text-[10px] tracking-[2px] uppercase rounded-full px-10 py-2.5 transition-all duration-200 max-[768px]:w-[70%] max-[768px]:max-w-[220px]"
             style={{
               background: "transparent",
               color: "#FFFFFF",
@@ -155,14 +153,13 @@ const HeroSection = () => {
               e.currentTarget.style.borderColor = "#FFFFFF";
               e.currentTarget.style.color = "#FFFFFF";
             }}>
-
             VIP TABLES
           </button>
         </motion.div>
 
         {/* Social icons */}
         <motion.div
-          className="mt-7 flex items-center gap-4"
+          className="mt-5 flex items-center gap-3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}>
