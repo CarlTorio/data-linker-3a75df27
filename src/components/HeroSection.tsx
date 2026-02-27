@@ -55,7 +55,7 @@ const HeroSection = () => {
         <motion.img
           src="https://i.imgur.com/yM9hN27.png"
           alt="Auxiliary Logo"
-          className="w-[160px] h-[160px] md:w-[160px] md:h-[160px] max-[768px]:w-[130px] max-[768px]:h-[130px]"
+          className="w-[160px] md:w-[160px] max-[768px]:w-[130px] object-contain"
           style={{ filter: "drop-shadow(0 0 30px rgba(139,0,0,0.6))" }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
