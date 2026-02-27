@@ -64,7 +64,7 @@ const HeroSection = () => {
 
         {/* Novaliches */}
         <motion.p
-          className="mt-10 md:mt-14 font-body font-bold text-[20px] md:text-[24px] tracking-[8px] uppercase"
+          className="mt-10 md:mt-14 font-body font-bold text-[20px] md:text-[24px] tracking-[1px] uppercase"
           style={{ color: "rgba(255,255,255,1)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
