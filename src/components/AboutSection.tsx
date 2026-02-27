@@ -6,6 +6,11 @@ const stats = [
   { number: "500+", label: "EVENTS HOSTED" },
 ];
 
+const childFade = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const AboutSection = () => (
   <section id="about" className="relative py-[90px]" style={{ background: "#130000" }}>
     <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-0">
@@ -26,19 +31,33 @@ const AboutSection = () => (
       {/* Right - Content */}
       <motion.div
         className="w-full md:w-1/2 px-6 md:px-16 py-10 md:py-16 flex flex-col justify-center gap-[22px]"
-        initial={{ opacity: 0, x: 60 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.15 } },
+        }}
       >
-        <p className="font-body font-semibold text-[9px] tracking-[5px] uppercase" style={{ color: "#CC0000" }}>
+        <motion.p
+          className="font-body font-semibold text-[9px] tracking-[5px] uppercase"
+          style={{ color: "#CC0000" }}
+          variants={childFade}
+        >
           OUR STORY
-        </p>
-        <div style={{ width: 60, height: 1, background: "#8B0000" }} />
-        <h2 className="font-display text-[52px] max-[768px]:text-[38px] tracking-[2px]" style={{ color: "#FFFFFF" }}>
+        </motion.p>
+        <motion.div
+          style={{ width: 60, height: 1, background: "#8B0000" }}
+          variants={{ hidden: { scaleX: 0, originX: 0 }, visible: { scaleX: 1, transition: { duration: 0.6 } } }}
+        />
+        <motion.h2
+          className="font-display text-[52px] max-[768px]:text-[38px] tracking-[2px]"
+          style={{ color: "#FFFFFF" }}
+          variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+        >
           More Than Just A Bar
-        </h2>
-        <div className="flex flex-col gap-4">
+        </motion.h2>
+        <motion.div className="flex flex-col gap-4" variants={childFade}>
           <p className="font-body font-light text-[14px] leading-[2]" style={{ color: "rgba(240,235,227,0.75)" }}>
             Auxiliary Bar and Lounge is Novaliches' premier destination for unforgettable nights. We blend premium spirits, handcrafted cocktails, and world-class DJ performances into one electrifying experience.
           </p>
@@ -48,15 +67,19 @@ const AboutSection = () => (
           <p className="font-body font-light text-[14px] leading-[2]" style={{ color: "rgba(240,235,227,0.75)" }}>
             Whether you're here for an intimate night out or a full-blown celebration, Auxiliary promises an atmosphere that hits different every single time.
           </p>
-        </div>
+        </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 mt-4">
+        <motion.div
+          className="grid grid-cols-3 gap-3 mt-4"
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }}
+        >
           {stats.map((s) => (
-            <div
+            <motion.div
               key={s.label}
               className="border p-4 text-center transition-all duration-300 group"
               style={{ borderColor: "rgba(139,0,0,0.25)" }}
+              variants={{ hidden: { opacity: 0, y: 30, scale: 0.9 }, visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5 } } }}
               onMouseEnter={(e) => (e.currentTarget.style.borderTopColor = "#8B0000")}
               onMouseLeave={(e) => (e.currentTarget.style.borderTopColor = "rgba(139,0,0,0.25)")}
             >
@@ -69,9 +92,9 @@ const AboutSection = () => (
               >
                 {s.label}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   </section>
