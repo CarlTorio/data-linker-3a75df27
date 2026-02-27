@@ -20,7 +20,7 @@ const Index = () => {
       {!loaded && <LoadingScreen onComplete={handleComplete} />}
       <div style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.5s ease" }}>
         <Navbar />
-        <HeroSection />
+        <HeroSection loaded={loaded} />
         <AboutSection />
         <GallerySection />
         <ParallaxQuote />
