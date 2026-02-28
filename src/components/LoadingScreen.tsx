@@ -42,7 +42,7 @@ const LoadingScreen = ({ onComplete }: {onComplete: () => void;}) => {
 
       <div className="relative z-10 flex flex-col items-center">
         <img
-          src="https://i.imgur.com/fNOsuUU.png"
+          src="https://i.imgur.com/HKLn00w.png"
           alt="Auxiliary Logo"
           className="animate-logo-pulse"
           style={{
