@@ -7,7 +7,7 @@ import GallerySection from "@/components/GallerySection";
 import ParallaxQuote from "@/components/ParallaxQuote";
 import MenuSection from "@/components/MenuSection";
 import EventsSection from "@/components/EventsSection";
-import BookingSection from "@/components/BookingSection";
+
 import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
 
@@ -26,7 +26,7 @@ const Index = () => {
         <ParallaxQuote />
         <MenuSection />
         <EventsSection />
-        <BookingSection />
+        
         <LocationSection />
         <Footer />
       </div>
