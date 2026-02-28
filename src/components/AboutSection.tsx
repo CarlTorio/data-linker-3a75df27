@@ -159,38 +159,42 @@ const AboutSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right - Video */}
-        <div ref={sectionRef} className="relative w-full md:w-1/2 h-[300px] md:h-auto md:min-h-[560px] overflow-hidden">
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            onEnded={handleEnded}
-            className="absolute inset-0 w-full h-full object-contain"
-            src="https://i.imgur.com/7zTw3OG.mp4"
-          />
+        {/* Right side spacer for layout on desktop */}
+        <div className="hidden md:block w-1/2" />
+      </div>
 
-          {/* Controls overlay */}
-          <div className="absolute bottom-4 right-4 flex gap-2 z-10">
-            {isEnded && (
-              <button
-                onClick={handleReplay}
-                className="p-2 rounded-full backdrop-blur-sm transition-opacity hover:opacity-100 opacity-70"
-                style={{ background: "rgba(0,0,0,0.5)" }}
-              >
-                <Play size={20} color="#fff" />
-              </button>
-            )}
-            {!isEnded && (
-              <button
-                onClick={toggleMute}
-                className="p-2 rounded-full backdrop-blur-sm transition-opacity hover:opacity-100 opacity-70"
-                style={{ background: "rgba(0,0,0,0.5)" }}
-              >
-                {isMuted ? <VolumeX size={20} color="#fff" /> : <Volume2 size={20} color="#fff" />}
-              </button>
-            )}
-          </div>
+      {/* Full-width Video */}
+      <div ref={sectionRef} className="relative w-full" style={{ aspectRatio: "16/9" }}>
+        <video
+          ref={videoRef}
+          muted
+          playsInline
+          onEnded={handleEnded}
+          className="absolute inset-0 w-full h-full object-contain"
+          style={{ background: "#000" }}
+          src="https://i.imgur.com/7zTw3OG.mp4"
+        />
+
+        {/* Controls overlay */}
+        <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+          {isEnded && (
+            <button
+              onClick={handleReplay}
+              className="p-2 rounded-full backdrop-blur-sm transition-opacity hover:opacity-100 opacity-70"
+              style={{ background: "rgba(0,0,0,0.5)" }}
+            >
+              <Play size={20} color="#fff" />
+            </button>
+          )}
+          {!isEnded && (
+            <button
+              onClick={toggleMute}
+              className="p-2 rounded-full backdrop-blur-sm transition-opacity hover:opacity-100 opacity-70"
+              style={{ background: "rgba(0,0,0,0.5)" }}
+            >
+              {isMuted ? <VolumeX size={20} color="#fff" /> : <Volume2 size={20} color="#fff" />}
+            </button>
+          )}
         </div>
       </div>
     </section>
