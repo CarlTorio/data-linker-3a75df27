@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const SocialIcon = ({ href, label, path }: {href: string;label: string;path: string;}) =>
 <a
@@ -26,9 +27,8 @@ const SocialIcon = ({ href, label, path }: {href: string;label: string;path: str
 
 
 const HeroSection = ({ loaded }: { loaded: boolean }) => {
-  const scrollToBooking = () => {
-    document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = useNavigate();
+  const goToBooking = () => navigate("/book");
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex flex-col items-center">
@@ -53,7 +53,7 @@ const HeroSection = ({ loaded }: { loaded: boolean }) => {
       <motion.img
         src="https://i.imgur.com/yM9hN27.png"
         alt="Auxiliary Logo"
-        className="relative z-10 w-[300px] md:w-[320px] max-[768px]:w-[230px] object-contain mt-24 md:mt-28"
+        className="relative z-10 w-[380px] md:w-[420px] max-[768px]:w-[280px] object-contain mt-24 md:mt-28"
         style={{ filter: "drop-shadow(0 0 30px rgba(139,0,0,0.6))" }}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={loaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
@@ -117,7 +117,7 @@ const HeroSection = ({ loaded }: { loaded: boolean }) => {
           transition={{ delay: 0.9, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}>
 
           <motion.button
-            onClick={scrollToBooking}
+            onClick={goToBooking}
             className="font-body font-bold text-[10px] tracking-[2px] uppercase rounded-full px-10 py-2.5 transition-colors duration-200 max-[768px]:w-[70%] max-[768px]:max-w-[220px]"
             style={{
               background: "#8B0000",
@@ -146,7 +146,7 @@ const HeroSection = ({ loaded }: { loaded: boolean }) => {
             BOOK NOW
           </motion.button>
           <button
-            onClick={scrollToBooking}
+            onClick={goToBooking}
             className="font-body font-bold text-[10px] tracking-[2px] uppercase rounded-full px-10 py-2.5 transition-all duration-200 max-[768px]:w-[70%] max-[768px]:max-w-[220px]"
             style={{
               background: "transparent",
