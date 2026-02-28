@@ -14,21 +14,7 @@ const childFade = {
 const AboutSection = () => (
   <section id="about" className="relative py-[90px]" style={{ background: "#130000" }}>
     <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-0">
-      {/* Left - Video */}
-      <div className="relative w-full md:w-1/2 h-[280px] md:h-auto md:min-h-[560px] overflow-hidden">
-        <video
-          autoPlay muted loop playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://i.imgur.com/LfCkDP6.mp4"
-        />
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.35)" }} />
-        <div
-          className="absolute inset-0 hidden md:block"
-          style={{ background: "linear-gradient(to right, transparent 70%, #130000 100%)" }}
-        />
-      </div>
-
-      {/* Right - Content */}
+      {/* Left - Content */}
       <motion.div
         className="w-full md:w-1/2 px-6 md:px-16 py-10 md:py-16 flex flex-col justify-center gap-[22px]"
         initial="hidden"
@@ -96,6 +82,20 @@ const AboutSection = () => (
           ))}
         </motion.div>
       </motion.div>
+
+      {/* Right - Video */}
+      <div className="relative w-full md:w-1/2 h-[280px] md:h-auto md:min-h-[560px] overflow-hidden">
+        <video
+          autoPlay muted loop playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="https://i.imgur.com/7zTw3OG.mp4"
+        />
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.35)" }} />
+        <div
+          className="absolute inset-0 hidden md:block"
+          style={{ background: "linear-gradient(to left, transparent 70%, #130000 100%)" }}
+        />
+      </div>
     </div>
   </section>
 );
